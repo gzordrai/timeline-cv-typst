@@ -13,7 +13,7 @@ language = "en"
 		last_name_size = "3.8em"
 	[layout.colour]
 		side = "#7EACB5"
-		main = ""
+		main = "#C96868"
 	[layout.font]
 		main = "Bitter"
 		title = "Fira Sans"
