@@ -1,0 +1,11 @@
+[package]
+name = "timeline-cv"
+version = "0.1.0"
+entrypoint = "timeline-cv.typ"
+authors = ["Rémi Morvan"]
+license = "Apache 2.0"
+description = "A two-column CV template with simple timelines."
+
+[template]
+path = "template"
+entrypoint = "main-cv.typ"
