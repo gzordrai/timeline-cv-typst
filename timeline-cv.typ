@@ -50,7 +50,7 @@
       fill: rgb("#FFE9B1"),
       inset: (x: .48em, y: .24em),
       clip: true,
-      radius: 6pt,
+      radius: .5em,
       text(font: data.layout.font.tag, size: .8em, fill: black, weight: "regular")[#content],
     )
   ]
