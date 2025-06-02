@@ -47,7 +47,7 @@
 #let tag(data: (), content) = [
   #box(inset: (left: .48em, bottom: -.18em))[
     #box(
-      fill: rgb("#FFE9B1"),
+      fill: rgb(data.layout.colour.tag),
       inset: (x: .48em, y: .24em),
       clip: true,
       radius: .5em,
@@ -105,9 +105,12 @@
     gutter: eval(data.layout.margin.column_separator),
     [
       #print_name(data)\
+      #set text(size: eval(data.layout.font.size) * 0.9)
       #side
     ],
-    main,
+    [
+      #main
+    ],
   )
   doc
 }
