@@ -27,7 +27,7 @@
       when: [apr 2006 – july 2006],
       where: [Jupiter Inc],
       title: [Intern in the Human Ressources Department],
-      description: lorem(26),
+      description: lorem(22),
     ),
   ),
 )

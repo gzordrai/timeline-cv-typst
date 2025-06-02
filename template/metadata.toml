@@ -17,6 +17,7 @@ language = "en"
 	[layout.font]
 		main = "Bitter"
 		title = "Fira Sans"
+		tag = "Fira Code"
 		size = "10pt"
 	[layout.margin]
 		x = "1.2cm"

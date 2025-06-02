@@ -44,10 +44,31 @@
   ]
 }
 
-#let main_entry(data: (), when: "", where: "", title: "", description: "") = [
-  _ #when _
+#let tag(data: (), content) = [
+  #box(inset: (left: .48em, bottom: -.18em))[
+    #box(
+      fill: rgb("#FFE9B1"),
+      inset: (x: .48em, y: .24em),
+      clip: true,
+      radius: 6pt,
+      text(font: data.layout.font.tag, size: .8em, fill: black, weight: "regular")[#content],
+    )
+  ]
+]
+
+#let separator = [
   #h(.2em)·#h(.2em)
-  #text(weight: "semibold", where) \
+]
+
+#let main_entry(data: (), when: "", where: "", title: "", description: "") = [
+  #if (when != "") [
+    _ #when _
+    #separator
+  ]
+  #text(weight: "semibold", where)
+  #if (when != "" and where != "") [
+    #linebreak()
+  ]
   #text(
     font: data.layout.font.title,
     size: 1.1em,

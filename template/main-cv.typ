@@ -15,9 +15,8 @@
 #let main = [
   #import_sections(
     metadata.language,
-    ("experience", "education"),
+    ("experience", "education", "software"),
   )
-  #lorem(250)
 ]
 #show: cv.with(
   data: metadata,
