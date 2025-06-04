@@ -96,7 +96,7 @@
   ]
 }
 
-#let main_entry(data: (), when: "", where: "", details: "", title: "", description) = [
+#let entry_main(data: (), when: "", where: "", details: "", title: "", description) = [
   #if (when != "") [
     _ #when _
     #if (where != "" or details != "" or title != "") [
@@ -133,7 +133,7 @@
   ]
 }
 
-#let side_entry(data: (), title: "", preposition: "", where: "", when: "", description) = [
+#let entry_side(data: (), title: "", preposition: "", where: "", when: "", description) = [
   #text(
     font: data.font.title,
     size: 1.1em,
