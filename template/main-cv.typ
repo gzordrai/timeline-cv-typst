@@ -16,7 +16,7 @@
 #let side = [
   #import_sections(
     metadata.language,
-    ("presentation", "association"),
+    ("presentation", "skill", "association"),
     spread: false,
   )
 ]

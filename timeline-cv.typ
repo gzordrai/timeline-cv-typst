@@ -153,6 +153,30 @@
   ]
 ]
 
+#let skill_point(data: (), filled) = {
+  box(
+    circle(
+      radius: .35em,
+      stroke: (.15em + rgb(data.colour.side)),
+      fill: if filled { rgb(data.colour.side) },
+    ),
+    inset: (x: .2em),
+  )
+}
+
+#let entry_skill(data: (), title: "", level: 0, level_max: 3, details: "") = [
+  #for i in range(level_max) {
+    skill_point(data: data, i < level)
+  }
+  #h(.8em)
+  #text(weight: "semibold", title)
+  #if (details != "") [
+    #text(size: 0.9em)[
+      #h(.2em) (#details)
+    ]
+  ]
+]
+
 #let cv(data: (), above: [], side: [], main: [], doc) = {
   set page(
     paper: "a4",
