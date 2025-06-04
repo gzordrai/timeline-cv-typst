@@ -1,6 +1,6 @@
 #import "../../timeline-cv.typ": *
 #let metadata = toml("../metadata.toml")
-#let entry_side = entry_side.with(data: metadata)
+#let entry_simple = entry_simple.with(data: metadata)
 
 #section_items(
   title: "Awards",
