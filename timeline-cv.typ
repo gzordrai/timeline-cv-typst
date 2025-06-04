@@ -183,7 +183,13 @@
 
 
 #let entry_simple(data: (), title: "", content) = [
-  #text(fill: rgb(data.colour.side), weight: "bold")[#title:]
+  #text(
+    font: data.font.title,
+    size: 1.1em,
+    fill: rgb(data.colour.side),
+    weight: "semibold",
+    smallcaps(title),
+  )
   #content
 ]
 

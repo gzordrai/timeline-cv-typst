@@ -5,16 +5,16 @@
 #section_items(
   title: "Languages",
   (
-    entry_simple(title: [English])[
+    entry_simple(title: "English:")[
       mother tongue.
     ],
-    entry_simple(title: [French])[
+    entry_simple(title: "French:")[
       bilingual (level C2).
     ],
-    entry_simple(title: [German])[
+    entry_simple(title: "German:")[
       level B1.
     ],
-    entry_simple(title: [Spanish])[
+    entry_simple(title: "Spanish:")[
       level A2.
     ],
   ),
