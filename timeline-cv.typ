@@ -1,5 +1,9 @@
 #import "@preview/fontawesome:0.5.0": *
 
+#let is_non_empty(content) = {
+  content != "" and content != []
+}
+
 #let tag(data: (), content) = [
   #box(inset: (left: .48em, bottom: -.18em))[
     #box(
@@ -37,7 +41,7 @@
       #last_name
     ]
     v(1.5em, weak: true)
-    if job_title != "" {
+    if is_non_empty(job_title) {
       text(size: 1.1em, weight: "bold", fill: rgb(data.colour.side))[
         #smallcaps(job_title)
       ]
@@ -62,7 +66,7 @@
       ]
     ]
   ]
-  if (presentation != "") {
+  if is_non_empty(presentation) {
     v(1em)
     presentation
   }
@@ -97,19 +101,19 @@
 }
 
 #let entry_main(data: (), when: "", where: "", details: "", title: "", description) = [
-  #if (when != "") [
+  #if is_non_empty(when) [
     _ #when _
-    #if (where != "" or details != "" or title != "") [
+    #if (is_non_empty(where) or is_non_empty(details) or is_non_empty(title)) [
       #separator
     ]
   ]
   #text(weight: "semibold", where)
-  #if (details != "") [
+  #if is_non_empty(details) [
     #text(size: 0.9em)[
       #h(.2em) (#details)
     ]
   ]
-  #if (when != "" and (where != "" or details != "")) [
+  #if is_non_empty(when) and (is_non_empty(where) or is_non_empty(details)) [
     #linebreak()
   ]
   #text(
@@ -143,13 +147,13 @@
   )
   #preposition
   #text(weight: "semibold", where)
-  #if (when != "") [
+  #if is_non_empty(when) [
     #text(size: 0.9em)[
       (#when)
     ]
   ]
-  #if (description != "") [
-    . #description
+  #if is_non_empty(description) [
+    #description
   ]
 ]
 
@@ -170,12 +174,19 @@
   }
   #h(.8em)
   #text(weight: "semibold", title)
-  #if (details != "") [
+  #if is_non_empty(details) [
     #text(size: 0.9em)[
       #h(.2em) (#details)
     ]
   ]
 ]
+
+
+#let entry_simple(data: (), title: "", content) = [
+  #text(fill: rgb(data.colour.side), weight: "bold")[#title:]
+  #content
+]
+
 
 #let cv(data: (), above: [], side: [], main: [], doc) = {
   set page(

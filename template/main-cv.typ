@@ -16,14 +16,14 @@
 #let side = [
   #import_sections(
     metadata.language,
-    ("presentation", "skill", "association"),
+    ("presentation", "awards", "skills", "languages", "associations"),
     spread: false,
   )
 ]
 #let main = [
   #import_sections(
     metadata.language,
-    ("experience", "education", "software"),
+    ("experience", "education", "softwares"),
     spread: true,
   )
 ]
