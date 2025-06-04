@@ -73,12 +73,21 @@
 }
 
 #let section_timeline(
+  icon: "",
   title: "Section Name",
   content: (),
 ) = {
   place()[
-    #circle(radius: .9em, stroke: .15em)
+    #circle(radius: .9em, stroke: .15em, fill: black)
   ]
+  if is_non_empty(icon) {
+    place(start + top, dx: .45em, dy: .45em)[
+      #box(height: .9em, width: .9em)[
+        #align(center + horizon, text(fill: white, fa-icon(icon)))
+      ]
+    ]
+  }
+
   box(inset: (left: 1.8em + 1.25em, top: .35em))[
     #heading(numbering: none, depth: 1, title)
   ]

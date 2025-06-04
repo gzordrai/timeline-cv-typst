@@ -3,6 +3,7 @@
 #let entry_main = entry_main.with(data: metadata)
 
 #section_timeline(
+  icon: "suitcase",
   title: "Professional Experience",
   content: (
     entry_main(

@@ -4,6 +4,7 @@
 #let tag = tag.with(data: metadata)
 
 #section_timeline(
+  icon: "computer",
   title: "Software Projects",
   content: (
     entry_main(
