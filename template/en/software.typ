@@ -22,7 +22,6 @@
       description: lorem(12),
     ),
     main_entry(
-      when: [2017],
       title: [MPoxTracker],
       description: lorem(14),
     ),

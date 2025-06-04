@@ -60,13 +60,20 @@
   #h(.2em)·#h(.2em)
 ]
 
-#let main_entry(data: (), when: "", where: "", title: "", description: "") = [
+#let main_entry(data: (), when: "", where: "", details: "", title: "", description: "") = [
   #if (when != "") [
     _ #when _
-    #separator
+    #if (where != "" or details != "" or title != "") [
+      #separator
+    ]
   ]
   #text(weight: "semibold", where)
-  #if (when != "" and where != "") [
+  #if (details != "") [
+    #text(size: 0.9em)[
+      #h(.2em) (#details)
+    ]
+  ]
+  #if (when != "" and (where != "" or details != "")) [
     #linebreak()
   ]
   #text(

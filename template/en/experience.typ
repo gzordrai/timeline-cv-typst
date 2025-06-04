@@ -14,6 +14,7 @@
     main_entry(
       when: [sept. 2019 – nov. 2021],
       where: [Quetzalcoatl & co],
+      details: [Hamburg, #smallcaps[de]],
       title: [Special Advisor],
       description: lorem(14),
     ),

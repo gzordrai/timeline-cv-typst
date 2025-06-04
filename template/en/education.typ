@@ -8,6 +8,7 @@
     main_entry(
       when: [sept 2006 – aug. 2010],
       where: [National University of Illiberal Arts],
+      details: [Berne, #smallcaps[ch]],
       title: [Ph.D. in Robotics],
       description: lorem(31),
     ),
