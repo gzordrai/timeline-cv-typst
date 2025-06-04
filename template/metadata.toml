@@ -1,26 +1,19 @@
 language = "en"
 
-[info]
-	first_name = "Alan"
-	last_name = "Turing"
-	job_title = "Computer Scientist"
-	
-
-[layout]
-	[layout.name]
-		align = "left"
-		first_name_size = "2.4em"
-		last_name_size = "3.8em"
-	[layout.colour]
-		side = "#7EACB5"
-		main = "#C96868"
-		tag = "#FFE9B1"
-	[layout.font]
-		main = "Bitter"
-		title = "Fira Sans"
-		tag = "Fira Code"
-		size = "10pt"
-	[layout.margin]
-		x = "1.2cm"
-		y = "1.2cm"
-		column_separator = ".8cm"
+[name]
+	align = "left"
+	first_name_size = "2.4em"
+	last_name_size = "3.8em"
+[colour]
+	side = "#7EACB5"
+	main = "#C96868"
+	tag = "#FFE9B1"
+[font]
+	main = "Bitter"
+	title = "Fira Sans"
+	tag = "Fira Code"
+	size = "10pt"
+[margin]
+	x = "1.4cm"
+	y = "1.4cm"
+	column_separator = ".8cm"

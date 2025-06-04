@@ -2,15 +2,21 @@
 #let metadata = toml("./metadata.toml")
 
 #let import_sections(lang, sections) = {
-  for section in sections {
+  for id in range(sections.len()) {
+    if (id > 0) {
+      v(1fr)
+    }
     include {
-      "./" + lang + "/" + section + ".typ"
+      "./" + lang + "/" + sections.at(id) + ".typ"
     }
   }
 }
 
 #let side = [
-  #lorem(100)
+  #import_sections(
+    metadata.language,
+    ("presentation",),
+  )
 ]
 #let main = [
   #import_sections(

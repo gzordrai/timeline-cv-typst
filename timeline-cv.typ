@@ -1,22 +1,6 @@
-#let print_name(
-  data,
-) = {
-  set text(font: data.layout.font.title)
-  set align(eval(data.layout.name.align))
-  text(size: eval(data.layout.name.first_name_size), weight: "extrabold")[
-    #data.info.first_name
-  ]
-  linebreak()
-  text(eval(data.layout.name.last_name_size), weight: "extrabold")[
-    #data.info.last_name
-  ]
-  v(1.5em, weak: true)
-  text(size: 1.1em, weight: "bold", fill: rgb(data.layout.colour.side))[
-    #smallcaps(data.info.job_title)
-  ]
-}
+#import "@preview/fontawesome:0.5.0": *
 
-#let timeline_section(
+#let section_timeline(
   title: "Section Name",
   content: (),
 ) = {
@@ -47,11 +31,11 @@
 #let tag(data: (), content) = [
   #box(inset: (left: .48em, bottom: -.18em))[
     #box(
-      fill: rgb(data.layout.colour.tag),
+      fill: rgb(data.colour.tag),
       inset: (x: .48em, y: .24em),
       clip: true,
       radius: .5em,
-      text(font: data.layout.font.tag, size: .8em, fill: black, weight: "regular")[#content],
+      text(font: data.font.tag, size: .8em, fill: black, weight: "regular")[#content],
     )
   ]
 ]
@@ -60,7 +44,7 @@
   #h(.2em)·#h(.2em)
 ]
 
-#let main_entry(data: (), when: "", where: "", details: "", title: "", description: "") = [
+#let main_entry(data: (), when: "", where: "", details: "", title: "", description) = [
   #if (when != "") [
     _ #when _
     #if (where != "" or details != "" or title != "") [
@@ -77,23 +61,64 @@
     #linebreak()
   ]
   #text(
-    font: data.layout.font.title,
+    font: data.font.title,
     size: 1.1em,
-    fill: rgb(data.layout.colour.main),
+    fill: rgb(data.colour.main),
     weight: "semibold",
     smallcaps(title),
   )\
   #description
 ]
 
+#let section_presentation(data: (), first_name, last_name, job_title, side: true, content) = {
+  // Name
+  {
+    set text(font: data.font.title)
+    set align(eval(data.name.align))
+    text(size: eval(data.name.first_name_size), weight: "extrabold")[
+      #first_name
+    ]
+    linebreak()
+    text(eval(data.name.last_name_size), weight: "extrabold")[
+      #last_name
+    ]
+    v(1.5em, weak: true)
+    if job_title != "" {
+      text(size: 1.1em, weight: "bold", fill: rgb(data.colour.side))[
+        #smallcaps(job_title)
+      ]
+    }
+    v(1em)
+  }
+  // Contact
+  let contact_separator = if side { v(-.1em) } else { separator }
+  for i in range(content.len()) [
+    #if (i > 0) {
+      contact_separator
+    }
+    #let item = content.at(i)
+    #if ("type" in item) [
+      #text(size: 1.2em, fa-icon(item.type, solid: true))
+      #h(.5em)
+    ]
+    #text(font: data.font.tag)[
+      #if ("link" in item) [
+        #link(item.link)[#item.display]
+      ] else [
+        #item.display
+      ]
+    ]
+  ]
+}
+
 #let cv(data: (), side: [], main: [], doc) = {
   set page(
     paper: "a4",
-    margin: (x: eval(data.layout.margin.x), y: eval(data.layout.margin.y)),
+    margin: (x: eval(data.margin.x), y: eval(data.margin.y)),
   )
   set text(
-    font: data.layout.font.main,
-    size: eval(data.layout.font.size),
+    font: data.font.main,
+    size: eval(data.font.size),
   )
   set par(
     justify: true,
@@ -102,17 +127,17 @@
   show heading: it => block(
     width: 100%,
     text(
-      font: data.layout.font.title,
+      font: data.font.title,
       smallcaps(it.body),
     ),
   )
 
   grid(
     columns: (3fr, 8fr),
-    gutter: eval(data.layout.margin.column_separator),
+    gutter: eval(data.margin.column_separator),
     [
-      #print_name(data)\
-      #set text(size: eval(data.layout.font.size) * 0.9)
+      #set text(size: eval(data.font.size) * 0.9)
+      #v(1em)
       #side
     ],
     [
