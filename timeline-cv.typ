@@ -70,11 +70,11 @@
   #description
 ]
 
-#let section_presentation(data: (), first_name, last_name, job_title, side: true, content) = {
+#let section_presentation(data: (), first_name, last_name, job_title, contact: (), presentation: "") = {
+  set align(eval(data.name.align))
   // Name
   {
     set text(font: data.font.title)
-    set align(eval(data.name.align))
     text(size: eval(data.name.first_name_size), weight: "extrabold")[
       #first_name
     ]
@@ -91,12 +91,12 @@
     v(1em)
   }
   // Contact
-  let contact_separator = if side { v(-.1em) } else { separator }
-  for i in range(content.len()) [
+  let contact_separator = v(-.1em)
+  for i in range(contact.len()) [
     #if (i > 0) {
       contact_separator
     }
-    #let item = content.at(i)
+    #let item = contact.at(i)
     #if ("type" in item) [
       #text(size: 1.2em, fa-icon(item.type, solid: true))
       #h(.5em)
@@ -109,9 +109,13 @@
       ]
     ]
   ]
+  if (presentation != "") {
+    v(1em)
+    presentation
+  }
 }
 
-#let cv(data: (), side: [], main: [], doc) = {
+#let cv(data: (), above: [], side: [], main: [], doc) = {
   set page(
     paper: "a4",
     margin: (x: eval(data.margin.x), y: eval(data.margin.y)),
@@ -131,7 +135,6 @@
       smallcaps(it.body),
     ),
   )
-
   grid(
     columns: (3fr, 8fr),
     gutter: eval(data.margin.column_separator),

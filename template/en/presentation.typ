@@ -6,9 +6,10 @@
   "Alan",
   "Turing",
   "Computer Scientist",
-  (
+  contact: (
     (type: "envelope", link: "mailto:a.turing@aol.fr", display: "a.turing@aol.fr"),
     (type: "github", link: "https://github.com/alanTutu071", display: "alanTutu071"),
     (type: "phone", display: "+34.1.23.45.67.89"),
   ),
+  presentation: lorem(22),
 )
