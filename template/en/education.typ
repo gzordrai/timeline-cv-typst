@@ -6,18 +6,18 @@
   title: "Education",
   content: (
     main_entry(
-      when: [sept 2006 – aug. 2010],
+      when: [Sept. 2006 – Aug. 2010],
       where: [National University of Illiberal Arts],
       details: [Berne, #smallcaps[ch]],
       title: [Ph.D. in Robotics],
     )[#lorem(31)],
     main_entry(
-      when: [sept 2004 – aug. 2006],
+      when: [Sept. 2004 – Aug. 2006],
       where: [École Normale Supérieure de Tourcoing],
       title: [Masters of Mathematics and Biology],
     )[#lorem(15)],
     main_entry(
-      when: [sept 2001 – aug. 2004],
+      when: [Sept. 2001 – Aug. 2004],
       where: [Waterside University],
       title: [Bachelor of Mathematics],
     )[],

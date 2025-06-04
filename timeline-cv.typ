@@ -1,5 +1,73 @@
 #import "@preview/fontawesome:0.5.0": *
 
+#let tag(data: (), content) = [
+  #box(inset: (left: .48em, bottom: -.18em))[
+    #box(
+      fill: rgb(data.colour.tag),
+      inset: (x: .48em, y: .24em),
+      clip: true,
+      radius: .5em,
+      text(font: data.font.tag, size: .8em, fill: black, weight: "regular")[#content],
+    )
+  ]
+]
+
+#let separator = [
+  #h(.2em)·#h(.2em)
+]
+
+#let section_presentation(
+  data: (),
+  first_name,
+  last_name,
+  job_title,
+  contact: (),
+  presentation: "",
+  contact_separator: v(-.1em),
+) = {
+  set align(eval(data.name.align))
+  // Name
+  {
+    set text(font: data.font.title)
+    text(size: eval(data.name.first_name_size), weight: "extrabold")[
+      #first_name
+    ]
+    linebreak()
+    text(eval(data.name.last_name_size), weight: "extrabold")[
+      #last_name
+    ]
+    v(1.5em, weak: true)
+    if job_title != "" {
+      text(size: 1.1em, weight: "bold", fill: rgb(data.colour.side))[
+        #smallcaps(job_title)
+      ]
+    }
+    v(1em)
+  }
+  // Contact
+  for i in range(contact.len()) [
+    #if (i > 0) {
+      contact_separator
+    }
+    #let item = contact.at(i)
+    #if ("type" in item) [
+      #text(size: 1.2em, fa-icon(item.type, solid: true))
+      #h(.5em)
+    ]
+    #text(font: data.font.tag)[
+      #if ("link" in item) [
+        #link(item.link)[#item.display]
+      ] else [
+        #item.display
+      ]
+    ]
+  ]
+  if (presentation != "") {
+    v(1em)
+    presentation
+  }
+}
+
 #let section_timeline(
   title: "Section Name",
   content: (),
@@ -28,22 +96,6 @@
   ]
 }
 
-#let tag(data: (), content) = [
-  #box(inset: (left: .48em, bottom: -.18em))[
-    #box(
-      fill: rgb(data.colour.tag),
-      inset: (x: .48em, y: .24em),
-      clip: true,
-      radius: .5em,
-      text(font: data.font.tag, size: .8em, fill: black, weight: "regular")[#content],
-    )
-  ]
-]
-
-#let separator = [
-  #h(.2em)·#h(.2em)
-]
-
 #let main_entry(data: (), when: "", where: "", details: "", title: "", description) = [
   #if (when != "") [
     _ #when _
@@ -70,50 +122,36 @@
   #description
 ]
 
-#let section_presentation(data: (), first_name, last_name, job_title, contact: (), presentation: "") = {
-  set align(eval(data.name.align))
-  // Name
-  {
-    set text(font: data.font.title)
-    text(size: eval(data.name.first_name_size), weight: "extrabold")[
-      #first_name
-    ]
-    linebreak()
-    text(eval(data.name.last_name_size), weight: "extrabold")[
-      #last_name
-    ]
-    v(1.5em, weak: true)
-    if job_title != "" {
-      text(size: 1.1em, weight: "bold", fill: rgb(data.colour.side))[
-        #smallcaps(job_title)
-      ]
-    }
-    v(1em)
-  }
-  // Contact
-  let contact_separator = v(-.1em)
-  for i in range(contact.len()) [
+#let section_items(data: (), title: "", content, content_separator: v(-.1em)) = {
+  heading(numbering: none, depth: 1, title)
+  v(1em)
+  for i in range(content.len()) [
     #if (i > 0) {
-      contact_separator
+      content_separator
     }
-    #let item = contact.at(i)
-    #if ("type" in item) [
-      #text(size: 1.2em, fa-icon(item.type, solid: true))
-      #h(.5em)
-    ]
-    #text(font: data.font.tag)[
-      #if ("link" in item) [
-        #link(item.link)[#item.display]
-      ] else [
-        #item.display
-      ]
+    #content.at(i)
+  ]
+}
+
+#let side_entry(data: (), title: "", preposition: "", where: "", when: "", description) = [
+  #text(
+    font: data.font.title,
+    size: 1.1em,
+    fill: rgb(data.colour.side),
+    weight: "semibold",
+    smallcaps(title),
+  )
+  #preposition
+  #text(weight: "semibold", where)
+  #if (when != "") [
+    #text(size: 0.9em)[
+      (#when)
     ]
   ]
-  if (presentation != "") {
-    v(1em)
-    presentation
-  }
-}
+  #if (description != "") [
+    . #description
+  ]
+]
 
 #let cv(data: (), above: [], side: [], main: [], doc) = {
   set page(
