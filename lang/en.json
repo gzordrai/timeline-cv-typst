@@ -1,0 +1,158 @@
+{
+    "associations": [
+        {
+            "title": "Member",
+            "preposition": "of the",
+            "where": "City Council of Vienna",
+            "when": "since Mar. 2025"
+        },
+        {
+            "title": "President",
+            "preposition": "of the",
+            "where": "XY Club",
+            "when": "Aug. 2016 – Sep. 2018"
+        }
+    ],
+    "awards": [
+        {
+            "title": "Turing Award",
+            "description": "for having such a wonderful name."
+        },
+        {
+            "title": "Best drawing",
+            "description": "of My Super Kindergarten. Received a price of one (1) green sticker."
+        }
+    ],
+    "education": [
+        {
+            "when": "Sept. 2006 – Aug. 2010",
+            "where": "National University of Illiberal Arts",
+            "details": "Berne, ch",
+            "title": "Ph.D. in Robotics",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, eget dictum."
+        },
+        {
+            "when": "Sept. 2004 – Aug. 2006",
+            "where": "École Normale Supérieure de Tourcoing",
+            "title": "Masters of Mathematics and Biology",
+            "description": "Lorem ipsum dolor sit amet, consectetur."
+        },
+        {
+            "when": "Sept. 2001 – Aug. 2004",
+            "where": "Waterside University",
+            "title": "Bachelor of Mathematics"
+        }
+    ],
+    "experience": [
+        {
+            "when": "since Sept. 2021",
+            "where": "Beelzebub Inc",
+            "title": "Head of the Human Rights Department",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, eget dictum."
+        },
+        {
+            "when": "Sept. 2019 – Nov. 2021",
+            "where": "Quetzalcoatl & co",
+            "details": "Hamburg, de",
+            "title": "Special Advisor",
+            "description": "Lorem ipsum dolor sit amet, consectetur."
+        },
+        {
+            "when": "Feb. 2011 – Aug. 2019",
+            "where": "Isis sarl",
+            "title": "Research Engineer",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "when": "Apr. 2006 – July 2006",
+            "where": "Jupiter Inc",
+            "title": "Intern in the Human Ressources Department",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+    ],
+    "languages": [
+        {
+            "title": "English",
+            "description": "mother tongue."
+        },
+        {
+            "title": "French",
+            "description": "bilingual (level C2)."
+        },
+        {
+            "title": "German",
+            "description": "level B1."
+        }
+    ],
+    "presentation": {
+        "first_name": "Alan",
+        "last_name": "Turing",
+        "title": "Computer Scientist",
+        "photo": "../../assets/alan.png",
+        "contact": [
+            {
+                "type": "envelope",
+                "link": "mailto:a.turing@aol.fr",
+                "display": "a.turing@aol.fr"
+            },
+            {
+                "type": "github",
+                "link": "https://github.com/alanTutu071",
+                "display": "alanTutu071"
+            },
+            {
+                "type": "phone",
+                "display": "+34.1.23.45.67.89"
+            }
+        ],
+        "presentation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "skills": [
+        {
+            "title": "Brainfuck",
+            "level": 3
+        },
+        {
+            "title": "Python",
+            "level": 2,
+            "details": "scikit, numpy"
+        },
+        {
+            "title": "Javascript",
+            "level": 2
+        },
+        {
+            "title": "C",
+            "level": 1
+        },
+        {
+            "title": "Django",
+            "level": 1
+        }
+    ],
+    "softwares": [
+        {
+            "when": "2021 – 2023",
+            "title": "Clippy 2.0",
+            "tags": [
+                "python",
+                "nlp"
+            ],
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "when": "since 2020",
+            "title": "EduROMBitcoinFarm",
+            "description": "Lorem ipsum dolor sit amet."
+        },
+        {
+            "when": "2021",
+            "title": "Stremiaux",
+            "description": "Lorem ipsum dolor sit amet, consectetur."
+        },
+        {
+            "title": "MPoxTracker",
+            "description": "Lorem ipsum dolor sit amet, consectetur."
+        }
+    ]
+}

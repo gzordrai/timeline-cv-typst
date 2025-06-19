@@ -144,10 +144,12 @@
 #let section_items(data: (), title: "", content, content_separator: v(-.1em)) = {
   heading(numbering: none, depth: 1, title)
   v(1em)
+
   for i in range(content.len()) [
     #if (i > 0) {
       content_separator
     }
+
     #content.at(i)
   ]
 }
@@ -197,7 +199,7 @@
 ]
 
 
-#let entry_simple(data: (), title: "", content) = [
+#let entry_simple(data: (), title: "", description: "",content) = [
   #text(
     font: data.font.title,
     size: 1.1em,
@@ -205,7 +207,7 @@
     weight: "semibold",
     smallcaps(title),
   )
-  #content
+  #text(description)
 ]
 
 

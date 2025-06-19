@@ -1,3 +1,2 @@
-template/alan-turing-en.pdf
-template/alan-turing-fr.pdf
+*.pdf
 .DS_Store
