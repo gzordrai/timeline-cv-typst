@@ -25,6 +25,7 @@
   first_name,
   last_name,
   job_title,
+  photo: [],
   contact: (),
   presentation: "",
   contact_separator: v(-.1em),
@@ -48,6 +49,11 @@
     }
     v(1em)
   }
+  if (is_non_empty(photo)) [
+    #set align(center)
+    #photo
+    #v(1em)
+  ]
   // Contact
   for i in range(contact.len()) [
     #if (i > 0) {

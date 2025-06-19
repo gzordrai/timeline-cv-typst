@@ -14,8 +14,5 @@
     entry_simple(title: "German:")[
       level B1.
     ],
-    entry_simple(title: "Spanish:")[
-      level A2.
-    ],
   ),
 )

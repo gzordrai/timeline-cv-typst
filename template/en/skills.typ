@@ -19,10 +19,6 @@
       level: 2,
     ),
     entry_skill(
-      title: [SQL],
-      level: 2,
-    ),
-    entry_skill(
       title: [C],
       level: 1,
     ),

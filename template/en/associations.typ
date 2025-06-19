@@ -17,11 +17,5 @@
       where: [XY Club],
       when: [Aug. 2016 – Sep. 2018],
     )[],
-    entry_side(
-      title: [Secretary],
-      preposition: [of the],
-      where: [National Jazz Band of Krakow],
-      when: [Feb. 2012 – Mar. 2013],
-    )[],
   ),
 )
