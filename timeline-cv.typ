@@ -92,7 +92,7 @@
     #heading(numbering: none, depth: 1, title)
   ]
   box(
-    stroke: (left: .15em, rest: 0em),
+    stroke: (left: .15em, rest: none),
     inset: (left: .9em + 1.25em, top: 1em, bottom: .75em),
     outset: (left: -.9em, top: .05em, right: 1.4em, rest: 0em),
   )[
