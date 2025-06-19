@@ -1,5 +1,9 @@
 #import "../timeline-cv.typ": *
 #let metadata = toml("./metadata.toml")
+#let lang = sys.inputs.at("lang", default: none)
+#if lang != none {
+  metadata.language = lang
+}
 
 #let import_sections(lang, sections, spread: true) = {
   for id in range(sections.len()) {

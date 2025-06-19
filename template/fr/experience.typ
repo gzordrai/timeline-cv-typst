@@ -4,28 +4,28 @@
 
 #section_timeline(
   icon: "suitcase",
-  title: "Professional Experience",
+  title: "Expérience Professionelle",
   content: (
     entry_main(
-      when: [since Sept. 2021],
+      when: [depuis sept. 2021],
       where: [Beelzebub Inc],
-      title: [Head of the Human Rights Department],
+      title: [Chef du département des droits humains],
     )[#lorem(32)],
     entry_main(
-      when: [Sept. 2019 – Nov. 2021],
+      when: [sept. 2019 – nov. 2021],
       where: [Quetzalcoatl & co],
       details: [Hamburg, #smallcaps[de]],
-      title: [Special Advisor],
+      title: [Conseiller spécial],
     )[#lorem(14)],
     entry_main(
-      when: [Feb. 2011 – Aug. 2019],
+      when: [fév. 2011 – août 2019],
       where: [Isis #smallcaps[sarl]],
-      title: [Research Engineer],
+      title: [Ingénieur de recherche],
     )[#lorem(20)],
     entry_main(
-      when: [Apr. 2006 – July 2006],
+      when: [avr. 2006 – juil. 2006],
       where: [Jupiter Inc],
-      title: [Intern in the Human Ressources Department],
+      title: [Stagiaire en ressources humaines],
     )[#lorem(21)],
   ),
 )
