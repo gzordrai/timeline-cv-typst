@@ -223,6 +223,7 @@
     leading: 0.52em,
   )
   set list(marker: [•])
+  set strong(delta: 200)
   show heading: it => block(
     width: 100%,
     text(
