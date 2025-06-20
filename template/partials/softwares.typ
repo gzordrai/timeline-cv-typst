@@ -4,8 +4,6 @@
   section_timeline(
     icon: "computer",
     title: "Software Projects",
-    content: data.map(item => renderer(
-      title: item.title,
-    )[])
+    content: data.map(item => renderer(title: item.title)[]),
   )
 }

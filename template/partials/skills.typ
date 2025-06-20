@@ -5,7 +5,7 @@
     title: "Skills",
     data.map(item => renderer(
       title: item.title,
-      level: item.level
-    ))
+      level: item.level,
+    )),
   )
 }

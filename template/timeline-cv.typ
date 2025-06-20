@@ -199,7 +199,7 @@
 ]
 
 
-#let entry_simple(data: (), title: "", description: "",content) = [
+#let entry_simple(data: (), title: "", content) = [
   #text(
     font: data.font.title,
     size: 1.1em,
@@ -207,7 +207,7 @@
     weight: "semibold",
     smallcaps(title),
   )
-  #text(description)
+  #content
 ]
 
 

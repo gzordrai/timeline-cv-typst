@@ -7,7 +7,7 @@
     content: data.map(item => renderer(
       title: item.title,
       when: item.when,
-      where: item.where
-    )[])
+      where: item.where,
+    )[]),
   )
 }

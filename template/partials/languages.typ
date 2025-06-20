@@ -5,7 +5,7 @@
     title: "Languages",
     data.map(item => renderer(
       title: item.title,
-      description: item.description
-    )[])
+      item.description,
+    )),
   )
 }
