@@ -1,11 +1,8 @@
 #import "../timeline-cv.typ": *
 
 #let awards_section(data, renderer) = {
-  section_items(
-    title: "Awards",
-    data.map(item => renderer(
-      title: item.title,
-      item.description,
-    )),
-  )
+  section_items(title: "Awards", data.map(item => renderer(
+    title: item.title,
+    item.description,
+  )))
 }

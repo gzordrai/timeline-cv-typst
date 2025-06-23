@@ -34,7 +34,7 @@
 #let main = [
   #experience_section(data.experience, entry_main)
   #education_section(data.education, entry_main)
-  #softwares_section(data.softwares, entry_main)
+  #softwares_section(data.softwares, entry_main, tag)
 ]
 #show: cv.with(
   data: metadata,
